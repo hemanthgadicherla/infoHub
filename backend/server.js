@@ -4,13 +4,12 @@ const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
 
 app.use(cors({
-    origin:'*',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     credentials: true,
@@ -20,9 +19,8 @@ app.use(cors({
 // Handle preflight requests
 app.options('*', cors());
 
-
 // Currency endpoint 
-app.get('/api/currency', async (req, res) => {
+app.get('/currency', async (req, res) => {
     try {
         let amount = req.query.amount ?? req.body?.amount;
         if (amount === undefined) return res.status(400).json({ error: 'Missing amount parameter. Use ?amount=100' });
@@ -43,9 +41,8 @@ app.get('/api/currency', async (req, res) => {
     }
 });
 
-
 // Quote endpoint
-app.get('/api/quote', async (req, res) => {
+app.get('/quote', async (req, res) => {
     try {
         const QUOTES = [
             "Believe you can and you're halfway there.",
@@ -65,7 +62,7 @@ app.get('/api/quote', async (req, res) => {
 });
 
 // Weather endpoint - simplified current weather (default: London)
-app.get('/api/weather', async (req, res) => {
+app.get('/weather', async (req, res) => {
     try {
         const city = req.query.city || req.body?.city || 'London';
         const key = process.env.OPENWEATHER_API_KEY;
@@ -90,14 +87,5 @@ app.get('/', (req, res) => {
     res.send('InfoHub Backend is running.');
 });
 
-// If this file is run directly (node server.js), start a local server.
-if (require.main === module) {
-    app.listen(port, () => {
-        console.log(`Server running on port ${port}`);
-    });
-}
-
-// Export a serverless handler so Vercel (and other platforms) can invoke the Express app.
-// This exports a function compatible with @vercel/node when building `server.js`.
 const serverless = require('serverless-http');
 module.exports = serverless(app);
