@@ -1,16 +1,116 @@
-# React + Vite
+# InfoHub Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application built with Vite that provides three essential utilities: Weather Information, Unit Converter, and Inspirational Quotes.
 
-Currently, two official plugins are available:
+![InfoHub Screenshot](./public/screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## React Compiler
+- **Weather Information**: Get real-time weather data for any location
+- **Unit Converter**: Convert between different units of measurement
+- **Inspirational Quotes**: Access a collection of motivational quotes
+- **Clean UI**: Modern, responsive design with smooth transitions
+- **Dark Theme**: Eye-friendly dark mode interface
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **React** - UI Library
+- **Vite** - Build Tool
+- **CSS3** - Styling with modern CSS features
+- **Axios** - HTTP client for API requests
+- **ESLint** - Code quality and consistency
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/hemanthgadicherla/infoHub.git
+   cd infoHub/client
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the client directory:
+   ```env
+   VITE_WEATHER_API_KEY=your_weather_api_key
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📁 Project Structure
+
+```
+client/
+├── src/
+│   ├── components/
+│   │   ├── Converter.jsx    # Unit conversion component
+│   │   ├── Weather.jsx      # Weather information component
+│   │   └── Quotes.jsx       # Inspirational quotes component
+│   ├── App.jsx             # Main application component
+│   ├── App.css             # Global styles
+│   └── main.jsx            # Entry point
+└── public/                 # Static assets
+```
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## 🌐 Environment Variables
+
+Create a `.env` file with the following:
+
+```env
+VITE_WEATHER_API_KEY=your_api_key_here
+```
+
+## 🎨 Styling
+
+The application uses modern CSS features including:
+- Flexbox and Grid for layouts
+- CSS Variables for theming
+- Smooth transitions and animations
+- Mobile-responsive design
+
+## 📱 Responsive Design
+
+The application is fully responsive and works on:
+- Desktop computers
+- Tablets
+- Mobile devices
+
+## 🚀 Deployment
+
+This project is deployed on Vercel. For deployment:
+
+1. Push your changes to GitHub
+2. Connect your repository to Vercel
+3. Configure environment variables
+4. Deploy!
+
+## 🔗 API Integration
+
+- Weather data from WeatherAPI
+- Quotes from external API service
+- All API calls are handled with Axios
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
