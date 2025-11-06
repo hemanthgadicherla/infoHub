@@ -90,6 +90,14 @@ app.get('/', (req, res) => {
     res.send('InfoHub Backend is running.');
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+// If this file is run directly (node server.js), start a local server.
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+}
+
+// Export a serverless handler so Vercel (and other platforms) can invoke the Express app.
+// This exports a function compatible with @vercel/node when building `server.js`.
+const serverless = require('serverless-http');
+module.exports = serverless(app);
