@@ -86,6 +86,9 @@ app.get('/api/weather', async (req, res) => {
         return res.status(status).json({ error: error.message, details: error.response?.data });
     }
 });
+app.get('/', (req, res) => {
+    res.send('InfoHub Backend is running.');
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
