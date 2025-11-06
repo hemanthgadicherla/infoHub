@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; background: #0f172a; color: #e2e8f0; }
+.container { max-width: 980px; margin: 0 auto; padding: 2rem 1rem; }
+.card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+.grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.tabs { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.tab { padding: .6rem 1rem; border-radius: 999px; border: 1px solid #374151; background: #0b1220; color: #cbd5e1; }
+.tab.active { background: #2563eb; color: white; border-color: #2563eb; }
+.heading { font-size: clamp(24px, 2.4vw, 32px); margin: 0 0 1rem; font-weight: 700; letter-spacing: .2px; }
+.subtle { color: #94a3b8; }
+.section { padding: 1rem; border-radius: 12px; background: #0b1220; border: 1px solid #1f2937; }
+.row { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+.input { padding: .6rem .8rem; background: #0a0f1a; border: 1px solid #334155; border-radius: 10px; color: #e2e8f0; }
+.button { padding: .6rem 1rem; background: #2563eb; color: white; border: none; border-radius: 10px; cursor:pointer; }
+.button.secondary { background: #111827; border: 1px solid #334155; color: #cbd5e1; }
+.kpi { font-size: 40px; line-height: 1.1; font-weight: 800; }
+.error { color: #fecaca; background: #450a0a; border: 1px solid #7f1d1d; padding: .6rem .8rem; border-radius: 10px; }
+.footer { text-align: center; opacity: .7; margin-top: 2rem; font-size: 14px; }
+hr.sep { border: none; border-top: 1px dashed #334155; margin: 1rem 0; }
