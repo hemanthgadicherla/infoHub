@@ -28,13 +28,13 @@ export default function Weather() {
   return (
     <div className="section">
       <h3 className="heading">Weather</h3>
-      <p className="subtle">Uses OpenWeather if key is set; otherwise mock data.</p>
+      <p className="subtle"> Enter a City Name</p>
       <div className="row" style={{marginTop: '.5rem'}}>
         <input className="input" value={city} onChange={e => setCity(e.target.value)} placeholder="Enter city (e.g., Hyderabad)" />
         <button className="button" onClick={() => fetchWeather(city)} disabled={loading}>{loading ? 'Loading...' : 'Get Weather'}</button>
       </div>
       <hr className="sep" />
-      {error && <div className="error">⚠️ {error}</div>}
+      {error && <div className="error">⚠️ Enter a valid city</div>}
       {data && (
         <div className="card">
           <div className="kpi">{data.temp !== null ? Math.round(data.temp) + '°C' : 'N/A'}</div>

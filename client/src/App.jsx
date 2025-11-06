@@ -11,7 +11,7 @@ export default function App() {
     <div className="container">
       <header style={{marginBottom: '1rem'}}>
         <h1 className="heading">InfoHub — ByteXL Challenge by Hemanth</h1>
-        <p className="subtle">Three utilities: Weather, Currency, Quotes. No reloads. Clean loading/error states.</p>
+        <p className="subtle">Three utilities: Weather, Currency, Quotes. </p>
       </header>
 
       <div className="tabs">
@@ -26,9 +26,6 @@ export default function App() {
         {tab === 'quotes' && <Quotes />}
       </main>
 
-      <footer className="footer">
-        <p>Built with Vite + React. Backend URL comes from <code>VITE_API_URL</code>.</p>
-      </footer>
     </div>
   );
 }
