@@ -9,12 +9,17 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 
-
+// Configure CORS for both local development and production
 app.use(cors({
-    origin: '*', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: ['http://localhost:5173', 'https://info-hub-frontend.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+    credentials: true,
+    optionsSuccessStatus: 200
 }));
+
+// Handle preflight requests
+app.options('*', cors());
 
 
 // Currency endpoint 
